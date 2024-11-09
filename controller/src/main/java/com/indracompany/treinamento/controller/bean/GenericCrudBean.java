@@ -25,6 +25,7 @@ import lombok.Setter;
 public abstract class GenericCrudBean<T extends GenericEntity<I>, I, S extends GenericCrudService<T, I, ?>>
         {
 
+    @SuppressWarnings("unused")
     private static final long serialVersionUID = -3853594377194808570L;
 
     @Autowired
@@ -39,7 +40,7 @@ public abstract class GenericCrudBean<T extends GenericEntity<I>, I, S extends G
     private transient List<T> list;
 
     @PostConstruct
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public void init() {
         try {
             this.entity = ((Class<T>) ((ParameterizedType) getClass().getGenericSuperclass())

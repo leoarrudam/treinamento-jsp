@@ -15,6 +15,7 @@ import com.indracompany.treinamento.exception.ExceptionValidacoes;
 
 public class JSONUtil {
 
+  @SuppressWarnings("deprecation")
   public static <T> T convertJsonStringToObject(final String json, final Class<T> object) throws AplicacaoException {
 
     try {
@@ -27,6 +28,7 @@ public class JSONUtil {
     }
   }
 
+  @SuppressWarnings("deprecation")
   public static <T> T convertJsonStringToObject(final String json, final TypeReference<T> typeReference) throws AplicacaoException {
 
     try {
@@ -39,6 +41,7 @@ public class JSONUtil {
     }
   }
 
+  @SuppressWarnings("deprecation")
   public static <T> T convertJsonToObject(final byte[] src, final Class<T> valueType) throws AplicacaoException {
 
     try {
@@ -51,6 +54,7 @@ public class JSONUtil {
     }
   }
 
+  @SuppressWarnings("deprecation")
   public static String convertObjectToJsonString(final Object object) throws AplicacaoException {
 
     try {
@@ -64,6 +68,7 @@ public class JSONUtil {
     }
   }
 
+  @SuppressWarnings("deprecation")
   public static String convertObjectToJsonStringWithIgnore(final Object object, final String... propertiesIgnore) throws AplicacaoException {
 
     try {

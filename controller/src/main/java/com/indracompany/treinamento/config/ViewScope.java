@@ -37,6 +37,7 @@ public class ViewScope implements Scope {
 
   @Override
   public void registerDestructionCallback(final String name, final Runnable runnable) {
+    @SuppressWarnings("unchecked")
     final Map<String, Runnable> callbacks = (Map<String, Runnable>) this.getViewMap().get(ViewScope.VIEW_SCOPE_CALLBACKS);
     if (callbacks != null) {
       callbacks.put(name, runnable);
@@ -47,6 +48,7 @@ public class ViewScope implements Scope {
   public Object remove(final String name) {
     final Object instance = this.getViewMap().remove(name);
     if (instance != null) {
+      @SuppressWarnings("unchecked")
       final Map<String, Runnable> callbacks = (Map<String, Runnable>) this.getViewMap().get(ViewScope.VIEW_SCOPE_CALLBACKS);
       if (callbacks != null) {
         callbacks.remove(name);

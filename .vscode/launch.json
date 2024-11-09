@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-AppConfig<treinamento-jsp-controller>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.indracompany.treinamento.AppConfig",
+      "projectName": "treinamento-jsp-controller",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

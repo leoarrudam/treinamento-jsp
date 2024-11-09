@@ -1,16 +1,20 @@
 package com.indracompany.treinamento.model.dto;
 
-import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+import com.indracompany.treinamento.util.TipoTransacao;
 
 import lombok.Data;
 
 @Data
-public class ExtratoDTO implements Serializable{
+public class ExtratoDTO {
 
-	private String agencia;
-	private String numeroConta;
-	private LocalDate dtInicio;
-	private LocalDate dtFim;
-	
+  private TipoTransacao tipo; // "SAQUE", "DEPOSITO", "TRANSFERENCIA"
+
+  private LocalDateTime dtInicio;
+  
+  private LocalDateTime dtFim;
+
+  private double saldo;
+
 }

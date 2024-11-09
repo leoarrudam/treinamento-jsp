@@ -35,10 +35,12 @@ import lombok.extern.slf4j.Slf4j;
  * @param <S>
  * @param <I>
  */
+@SuppressWarnings("deprecation")
 @Slf4j
 @RequestMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public abstract class GenericCrudRest<T extends GenericEntity<I>, I, S extends GenericCrudService<T, I, ?>> {
 
+  @SuppressWarnings("unused")
   private static final long serialVersionUID = -3853594377194808570L;
 
   @Autowired
@@ -52,6 +54,7 @@ public abstract class GenericCrudRest<T extends GenericEntity<I>, I, S extends G
   @Setter
   private transient List<T> list;
 
+  @SuppressWarnings("unchecked")
   @ApiOperation(value = "Atualiza uma entidade existente.", nickname = "alterar", notes = "")
   @ApiResponses(value = {@ApiResponse(code = 400, message = "ID inválido"), @ApiResponse(code = 404, message = "Entidade não encontrada"),
       @ApiResponse(code = 405, message = "Validation exception")})
@@ -177,6 +180,7 @@ public abstract class GenericCrudRest<T extends GenericEntity<I>, I, S extends G
   }
 
 
+  @SuppressWarnings("unchecked")
   public S getService() 
   {
 	  return (S) this.service;

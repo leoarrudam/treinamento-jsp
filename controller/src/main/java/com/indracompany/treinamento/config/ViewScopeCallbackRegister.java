@@ -26,6 +26,7 @@ public class ViewScopeCallbackRegister implements ViewMapListener {
     } else if (event instanceof PreDestroyViewMapEvent) {
       final PreDestroyViewMapEvent viewMapEvent = (PreDestroyViewMapEvent) event;
       final UIViewRoot viewRoot = (UIViewRoot) viewMapEvent.getComponent();
+      @SuppressWarnings("unchecked")
       final Map<String, Runnable> callbacks = (Map<String, Runnable>) viewRoot.getViewMap().get(ViewScope.VIEW_SCOPE_CALLBACKS);
       if (callbacks != null) {
         for (final Runnable c : callbacks.values()) {

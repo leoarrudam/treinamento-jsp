@@ -1,7 +1,5 @@
 package com.indracompany.treinamento.controller.validator;
 
-import java.util.InputMismatchException;
-
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
@@ -29,8 +27,6 @@ public class CpfValidator implements Validator {
     cpf = cpf.replace("-", "");
     return cpf;
   }
-
-  
 
   @Override
   public void validate(final FacesContext arg0, final UIComponent arg1, Object valorTela) {
