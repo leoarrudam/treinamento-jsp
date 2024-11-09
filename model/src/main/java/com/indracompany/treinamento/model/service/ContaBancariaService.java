@@ -8,9 +8,12 @@ import com.indracompany.treinamento.model.dto.TransferenciaBancariaDTO;
 import com.indracompany.treinamento.model.entity.ContaBancaria;
 import com.indracompany.treinamento.model.entity.enums.OperacaoTipo;
 import com.indracompany.treinamento.model.repository.ContaBancariaRepository;
+import com.indracompany.treinamento.util.xml.Elemento;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 public class ContaBancariaService 
@@ -68,4 +71,20 @@ public class ContaBancariaService
 				"Recebido da agencia: " + transferenciaDto.getAgenciaOrigem() + " numero: " + transferenciaDto.getNumeroContaOrigem(),
 				OperacaoTipo.ENTRADA);
 	}
-}
+
+	public Elemento listarTodasContas() {
+		List<ContaBancaria> contasBancarias = this.listar();
+
+		Elemento elementoListaContas = new Elemento("contas");
+		for (ContaBancaria conta : contasBancarias) {
+			Elemento elementoConta = new Elemento("conta");
+			elementoConta.incluirFilho(new Elemento("nome", conta.getCliente().getNome()));
+			elementoConta.incluirFilho(new Elemento("agencia", conta.getAgencia()));
+			elementoConta.incluirFilho(new Elemento("numero", conta.getNumero()));
+			elementoConta.incluirFilho(new Elemento("saldo", String.valueOf(conta.getSaldo())));
+
+			elementoListaContas.incluirFilho(elementoConta);
+		}
+		return elementoListaContas;
+	}
+			}
