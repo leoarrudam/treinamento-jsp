@@ -20,23 +20,58 @@ Exibir um combox com os clientes utilizando a classe Elemento
 <title>Cliente</title>
 </head>
 <body bgcolor="white">
+	<%--
 	<b>Cliente:</b>
-	<select name=cmbCliente>
+	 
+	 <select name=cmbCliente>
 		<% 
 
-			ServiceInstante<ClienteService> serviceInstance = new ServiceInstante<ClienteService>();
+	//		ServiceInstante<ClienteService> serviceInstance = new ServiceInstante<ClienteService>();
 			
-			ClienteService service = serviceInstance.get("clienteService", request);
-			Elemento elementoListaCiente  = service.listarNomeCliente();
+	//		ClienteService service = serviceInstance.get("clienteService", request);
+	//		Elemento elementoListaCiente  = service.listarNomeCliente();
 			
-			for(Elemento elementoCliente: elementoListaCiente.getFilhos("cliente")) {
+	//		for(Elemento elementoCliente: elementoListaCiente.getFilhos("cliente")) {
 			%>
 			
-					<option><%= elementoCliente.getValor("nome") %></option>
+	//				<option><%= elementoCliente.getValor("nome") %></option>
 			
 					<%
 			  }
 			%>
+			
 	</select>
+	--%>
+	<b>Clientes:</b>
+	
+	<table>
+	<thead>
+    <tr>
+      <th scope="col">Cliente</th>
+      <th scope="col">Agencia</th>
+      <th scope="col">Conta</th>
+      <th scope="col">Saldo</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% 
+  ServiceInstante<ClienteService> serviceInstance = new ServiceInstante<ClienteService>();
+	
+	ClienteService service = serviceInstance.get("clienteService", request);
+	Elemento elementoListaCiente  = service.listarClientesEContas();
+	
+	for(Elemento elementoCliente: elementoListaCiente.getFilhos("cliente")) {    
+            %>
+    <tr>
+      <th scope="row"><%= elementoCliente.getValor("nome") %></th>
+      <td><%= elementoCliente.getValor("agencia") %></td>
+      <td><%= elementoCliente.getValor("conta") %></td>
+      <td><%= elementoCliente.getValor("saldo") %></td>
+      <%
+			  }
+			%>
+    </tr>
+    </tbody>
+	</table>
 </body>
 </html>

@@ -1,43 +1,41 @@
 package com.indracompany.treinamento.model.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
-
-import org.hibernate.validator.constraints.br.CPF;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Entity
-@Table(name = "clientes")
+@Table(name = "contas_bancarias")
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class Cliente extends GenericEntity<Long>{
-	
+public class ContaBancaria extends GenericEntity<Long>{
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
-	@Column(length = 50)
-	private String nome;
 	
-	@CPF
-	@Column(length = 11)
-	private String cpf;
+	@Column(length = 4)
+	private String agencia;
 	
-	@Email
-	private String email;
+	@Column(length = 6)
+	private String numero;
 	
-	private boolean ativo;
+	@Column
+	private double saldo;
 	
-	private String observacoes;
-	
-	
-
+	@ManyToOne
+	@JoinColumn(name = "fk_cliente_id")
+	private Cliente cliente;
 	
 }
