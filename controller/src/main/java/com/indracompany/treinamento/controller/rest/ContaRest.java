@@ -22,31 +22,28 @@ public class ContaRest extends GenericCrudRest<Conta, Long, ContaService> {
     private ContaService contaService;
 
     /**
-     * Endpoint para realizar um depósito na conta bancária.
-     * @param dto Dados do depósito a ser realizado.
-     * @return ResponseEntity com status HTTP 200.
+     * @param dto 
+     * @return 
      */
     @PutMapping(value = "/depositar", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> depositar(@RequestBody DepositoDTO dto) {
         contaService.depositar(dto);
-        return ResponseEntity.ok().build(); // Simplificando a criação do ResponseEntity
+        return ResponseEntity.ok().build(); 
     }
 
     /**
-     * Endpoint para realizar um saque da conta bancária.
-     * @param dto Dados do saque a ser realizado.
-     * @return ResponseEntity com status HTTP 200.
+     * @param dto 
+     * @return 
      */
     @PutMapping(value = "/sacar", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> sacar(@RequestBody SaqueDTO dto) {
         contaService.sacar(dto);
-        return ResponseEntity.ok().build(); // Simplificando a criação do ResponseEntity
+        return ResponseEntity.ok().build(); 
     }
 
     /**
-     * Endpoint para realizar uma transferência bancária.
-     * @param dto Dados da transferência a ser realizada.
-     * @return ResponseEntity com status HTTP 200.
+     * @param dto 
+     * @return 
      */
     @PutMapping(value = "/transferir", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> transferir(@RequestBody TransferenciaDTO dto) {
