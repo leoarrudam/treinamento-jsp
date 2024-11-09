@@ -17,25 +17,24 @@ import lombok.EqualsAndHashCode;
 @Table(name = "clientes")
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class Cliente extends GenericEntity<Long>{
-	
+public class Cliente extends GenericEntity<Long> {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@Column(length = 50)
 	private String nome;
-	
+
 	@CPF
 	@Column(length = 11)
 	private String cpf;
-	
+
 	@Email
 	private String email;
-	
+
 	private boolean ativo;
-	
+
 	private String observacoes;
 
-	
 }

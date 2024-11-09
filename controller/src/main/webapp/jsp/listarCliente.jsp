@@ -23,9 +23,7 @@ Exibir um combox com os clientes utilizando a classe Elemento
 	<b>Cliente:</b>
 	<select name=cmbCliente>
 		<% 
-
-			ServiceInstante<ClienteService> serviceInstance = new ServiceInstante<ClienteService>();
-			
+			ServiceInstante<ClienteService> serviceInstance = new ServiceInstante<ClienteService>();			
 			ClienteService service = serviceInstance.get("clienteService", request);
 			Elemento elementoListaCiente  = service.listarNomeCliente();
 			
