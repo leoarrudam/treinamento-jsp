@@ -14,8 +14,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Entity
-@Table(name = "clientes")
 @Data
+@Table(name = "cliente_caua_pires")
 @EqualsAndHashCode(callSuper = true)
 public class Cliente extends GenericEntity<Long>{
 	
@@ -23,19 +23,23 @@ public class Cliente extends GenericEntity<Long>{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(length = 50)
+	@Column(length = 50, nullable = false)
 	private String nome;
 	
 	@CPF
-	@Column(length = 11)
+	@Column(length = 11, nullable = false, unique = true)
 	private String cpf;
 	
 	@Email
+	@Column(nullable = false, unique = true)
 	private String email;
 	
 	private boolean ativo;
 	
 	private String observacoes;
 
+	public Cliente() {}
+
+	//construtor
 	
 }
