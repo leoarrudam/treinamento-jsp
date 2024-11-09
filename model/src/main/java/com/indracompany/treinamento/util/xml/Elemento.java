@@ -188,7 +188,7 @@ public class Elemento implements Serializable, Cloneable {
      *
      * @param filho <code>Elemento</code> o filho que ser� inserido
      */
-    private void adicionarFilho(Elemento filho) {
+    public void adicionarFilho(Elemento filho) {
 
         if (filhos_ == null)  {
 
