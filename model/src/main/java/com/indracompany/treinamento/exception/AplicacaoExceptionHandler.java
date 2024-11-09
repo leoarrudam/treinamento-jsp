@@ -17,7 +17,7 @@ import org.springframework.util.CollectionUtils;
 import com.indracompany.treinamento.util.FacesUtil;
 
 import lombok.extern.slf4j.Slf4j;
-
+import lombok.extern.java.Log;
 /**
  * @author efmendes
  *

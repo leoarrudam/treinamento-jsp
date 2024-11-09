@@ -1,5 +1,4 @@
 package com.indracompany.treinamento.controller.rest;
-
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
@@ -27,7 +26,7 @@ import io.swagger.annotations.ApiResponses;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-
+import lombok.extern.java.Log;
 /**
  * @author efmendes
  *

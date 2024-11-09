@@ -1,6 +1,7 @@
 package com.indracompany.treinamento.controller.rest;
 
 import java.util.List;
+
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
+import lombok.extern.java.Log;
+//import java.util.logging.Logger;
 
 @Slf4j
 @RestController

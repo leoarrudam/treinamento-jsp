@@ -22,9 +22,5 @@ public class DBConfigProperties {
 	
 	@Value("${primary.datasource.driverClassName}")
 	private String primaryDatasourceDriverClassName;
-	
-	
-
-
 
 }

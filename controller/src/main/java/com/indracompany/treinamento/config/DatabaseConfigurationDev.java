@@ -13,7 +13,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import lombok.extern.slf4j.Slf4j;
-
+import lombok.extern.java.Log;
 @Configuration
 @Slf4j
 @EnableTransactionManagement

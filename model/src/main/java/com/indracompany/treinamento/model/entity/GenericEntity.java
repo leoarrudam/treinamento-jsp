@@ -17,7 +17,7 @@ import org.springframework.data.domain.Persistable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.extern.slf4j.Slf4j;
-
+import lombok.extern.java.Log;
 
 /**
  * @author efmendes

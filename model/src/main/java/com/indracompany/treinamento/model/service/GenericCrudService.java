@@ -21,7 +21,7 @@ import com.indracompany.treinamento.model.entity.GenericEntity;
 import com.indracompany.treinamento.model.repository.GenericCrudRepository;
 
 import lombok.extern.slf4j.Slf4j;
-
+import lombok.extern.java.Log;
 
 /**
  * @author efmendes

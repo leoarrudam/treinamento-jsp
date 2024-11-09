@@ -5,7 +5,7 @@ import com.indracompany.treinamento.util.FacesUtil;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-
+import lombok.extern.java.Log;
 /**
  *
  * @author efmendes
