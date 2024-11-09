@@ -25,7 +25,15 @@ public class Cliente extends GenericEntity<Long>{
 
 	@Column(length = 50)
 	private String nome;
-	
+
+	@Column(length = 50)
+	private String agencia;
+
+	@Column(length = 50)
+	private String conta;
+
+	@Column(length = 50)
+	private double saldo;
 	@CPF
 	@Column(length = 11)
 	private String cpf;
@@ -37,5 +45,5 @@ public class Cliente extends GenericEntity<Long>{
 	
 	private String observacoes;
 
-	
+
 }

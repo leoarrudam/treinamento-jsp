@@ -40,7 +40,6 @@ public class AplicacaoExceptionHandler extends ExceptionHandlerWrapper {
   /**
    * Atualiza informacoes do erros ocorridos para atualizar as estatisticas das exceptions
    *
-   * @param Throwable e
    */
   private void atualizarInformaErrosInesperados(final Throwable e) {
     final String msgErro = e.getLocalizedMessage();
